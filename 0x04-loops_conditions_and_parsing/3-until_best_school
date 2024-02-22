@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Initialize a counter variable
+count=0
+
+# Use an until loop to iterate 10 times
+until [[ $count -eq 10 ]]; do
+  echo "Best School"
+  ((count++)) # Increment the counter using arithmetic expansion
+done

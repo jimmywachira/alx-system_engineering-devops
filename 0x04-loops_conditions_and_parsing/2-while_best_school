@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Initialize a counter variable
+i=1
+
+# Use a while loop to iterate 10 times
+while [[ $i -le 10 ]]; do
+  echo "Best School"
+  i=$((i + 1)) # Increment the counter
+done
+

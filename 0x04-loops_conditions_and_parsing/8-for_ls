@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Loop through files in the current directory
+for file in *; do
+  # Skip hidden files
+  if [[ $file == .?* ]]; then
+    continue
+  fi
+
+  # Extract name after dash using parameter expansion
+  name_after_dash=${file##*-}
+
+  # Display name in list format
+  echo "$name_after_dash"
+done

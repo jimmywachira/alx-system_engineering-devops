@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#manage processes
+while true; do
+  echo "I am alive!" >> /dev/null  # Discard output to null device
+  sleep 2
+done

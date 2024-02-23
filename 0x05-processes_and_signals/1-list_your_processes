@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Use ps command with options for clarity
+ps -eo uid,pid,%cpu,%mem,rss,stat,cmd -A | column -t
+
+# Group processes by parent to show hierarchy
+ps -eo pid,ppid,cmd -A | tr ' ' '\t' | sort -nk1,1
+
+# Display header for better understanding
+echo "User  PID  CPU% MEM%% RSS  STAT COMMAND"
+echo "----- ----- ---- ---- ---- ----- ------"
+
+# Loop through processes and format output
+while read uid pid cpu mem rss stat cmd; do
+  # Use printf for better string formatting
+  printf "%-5s %-5s %-4s %-4s %-5s %-5s %-20s\n" \
+         "$uid" "$pid" "$cpu" "$mem" "$rss" "$stat" "$cmd"
+done <<< "$(ps -eo uid,pid,%cpu,%mem,rss,stat,cmd -A | tail -n +2)"
+
+
+
+
+
+
+
+
+

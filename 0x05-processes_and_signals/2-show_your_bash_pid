@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#show bash id
+my_pid=$(ps -o pid= -p $$ | xargs)
+echo "Your Bash process PID is: $my_pid"
+

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Bash script that displays its own PID.
+my_pid=$(ps -o pid= -p $$ | xargs)
+echo "My PID is: $my_pid"

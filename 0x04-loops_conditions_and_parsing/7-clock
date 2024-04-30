@@ -1,29 +1,13 @@
 #!/usr/bin/env bash
-hour=0
-minute=1
+#Bash script that displays the time for 12 hours and 59 minutes:
 
-while true; do
-  # Format time string with leading zeros
-  formatted_time=$(printf "%02d:%02d" "$hour" "$minute")
-
-  # Display time only until 12:59
-  if [[ $hour -eq 12 && $minute -eq 59 ]]; then
-    break
-  fi
-
-  # Display formatted time
-  echo "$formatted_time"
-
-  # Increment minute and handle rollover
-  minute=$((minute + 1))
-  if [[ $minute -gt 59 ]]; then
-    minute=1
-    hour=$((hour + 1))
-  fi
-
-  # Pause for one minute
-  sleep 60
+i="0"
+while [ $i -le 12 ]; do
+    echo "Hour: $i"
+    j="1"
+    while [ $j -le 59 ]; do
+        echo "$j"
+        j=$((j+1))
+    done
+    i=$((i+1))
 done
-
-
-

@@ -1,18 +1,16 @@
 #!/usr/bin/env bash
-# Initialize counter
-i=1
+# This script is displaying "Best School" 10 times
 
-# Loop through numbers 1 to 10
-while [[ $i -le 10 ]]; do
-  if [[ $i -eq 4 ]]; then
-    echo "Oh no, bad luck!"
-  elif [[ $i -eq 8 ]]; then
-    echo "Hurray, good luck!"
-  else
-    echo "Best School"
-  fi
-
-  # Increment counter
-  ((i++))
+i="0"
+while [ $i -lt 10 ]; do
+    if [ "$i" == "3" ]
+    then
+        echo "bad luck"
+    elif [ "$i" == "7" ]
+    then
+        echo "good luck"
+    else
+        echo "Best School"
+    fi
+    i=$((i+1))
 done
-
